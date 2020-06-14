@@ -5,10 +5,11 @@ from nltk.tokenize import RegexpTokenizer
 def joinFiles():
     index = 0
     while index < 238:
-        with open('news/'+str(index)+'.txt', 'r') as arquivinho, open('news/arquivao.txt', 'a') as arquivao:
-            for line in arquivinho.readline():
-                arquivao.write(line)
-            index+=1
+        with open('news/'+str(index)+'.txt', 'r') as arquivinho, open('news/arquivao.txt', 'a') as arquivao:   
+            for line in arquivinho:
+                linha = arquivinho.readline()
+            arquivao.write(linha)
+        index+=1
     arquivao.close()
     
 def lemmantizator():
@@ -58,7 +59,7 @@ def lemmantizator():
     f.close()
     
 def main():
-    joinFiles() #FEITO
+    #joinFiles() #FEITO
     #print('\n\nAgora lemmatiza...')
     
     #lemmantizator() #DONE
